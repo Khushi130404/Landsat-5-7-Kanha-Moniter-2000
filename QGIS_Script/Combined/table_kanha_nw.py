@@ -22,7 +22,7 @@ folders = [
 # USE LOADED AOI VECTOR LAYER
 # ------------------------
 # Replace 'north_west_zone' with the name of your loaded shapefile layer in QGIS
-aoi_layers = QgsProject.instance().mapLayersByName("kanha_whole")
+aoi_layers = QgsProject.instance().mapLayersByName("kanha_north_west")
 if not aoi_layers:
     raise Exception("AOI layer not found in QGIS")
 aoi_layer = aoi_layers[0]
@@ -30,7 +30,7 @@ aoi_layer = aoi_layers[0]
 # ------------------------
 # CREATE MEMORY LAYER FOR RESULTS
 # ------------------------
-layer = QgsVectorLayer("None", "whole_kanha_table", "memory")
+layer = QgsVectorLayer("None", "north_west_kanha_table", "memory")
 pr = layer.dataProvider()
 
 pr.addAttributes([
